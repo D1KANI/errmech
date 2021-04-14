@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -7,9 +8,9 @@
   <title>Кастомные клавиатуры по выгодной цене прямиком из Удмуртии</title>
   <meta name="description" content="Кастомные мезанические клавиатуры по выгодной цене прямиком из Удмуртской Республики. Каждая клавиатура собрана исключительно в ручную, а коплектующие проходят проверку и внимательный осмотр. Каждая наша продукция внимательно тестируется перед тем как отправиться покупателю. ERR-MECH - это забота о пользователях.">
   <meta name="keywords" content="клавиатура, ижевск, механика, механическая клавиатура, err mech, err-mech, err.mech, error, err, mech, error mech, mechanical, keyboards, geteron">
-  <link rel="stylesheet" href="/fonts/Gilroy/stylesheet.css">
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="{% static 'fonts/Gilroy/stylesheet.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="shortcut icon" href="{% static 'favicon.png' %}" type="image/x-icon">
 </head>
 <body>
   <div class="page-wrapper">
@@ -286,9 +287,9 @@
       </div>
     </footer>
   </div>
-  <script src="/libs/jquery-3.6.0.min.js"></script>
-  <script src="/libs/slick.min.js"></script>
-  <script src="/js/gradient.js"></script>
-  <script src="/js/main.js"></script>
+  <script src="{% static '/libs/jquery-3.6.0.min.js' %}"></script>
+  <script src="{% static '/libs/slick.min.js' %}"></script>
+  <script src="{% static '/js/gradient.js' %}"></script>
+  <script src="{% static '/js/main.js' %}"></script>
 </body>
 </html>
