@@ -13,7 +13,7 @@ class CompanyAdmin(admin.ModelAdmin):
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'slug')
+    list_display = ('id', 'title', 'image', 'slug')
     list_display_links = ('id', 'title')
     search_fields = ('title',)
     prepopulated_fields = {'slug': ('title',)}
@@ -27,7 +27,7 @@ class CompanySwitchesAdmin(admin.ModelAdmin):
 
 
 class SwitchAdmin(admin.ModelAdmin):
-    list_display = ('id', 'company_fk', 'title', 'color')
+    list_display = ('id', 'company_fk', 'title', 'price', 'color')
     list_display_links = ('id', 'title')
     search_fields = ('title',)
 
@@ -82,6 +82,21 @@ class ItemAdmin(admin.ModelAdmin):
     get_photo.short_description = 'Фото'
 
 
+class NewsAdminForm(forms.ModelForm):
+    content = forms.CharField(widget=CKEditorUploadingWidget())
+
+    class Meta:
+        model = Item
+        fields = '__all__'
+
+
+class NewsAdmin(admin.ModelAdmin):
+    form = NewsAdminForm
+    list_display = ('id', 'title', 'short_desc', 'created_at')
+    list_display_links = ('id', 'title')
+    save_on_top = True
+
+
 admin.site.register(Company, CompanyAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(CompanySwitches, CompanySwitchesAdmin)
@@ -90,3 +105,4 @@ admin.site.register(KeyboardSwitches, KeyboardSwitchesAdmin)
 admin.site.register(ItemWithPhoto, ItemWithPhotoAdmin)
 admin.site.register(ItemCharacteristic, ItemCharacteristicAdmin)
 admin.site.register(Item, ItemAdmin)
+admin.site.register(News, NewsAdmin)

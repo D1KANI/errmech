@@ -1,17 +1,20 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кастомные клавиатуры по выгодной цене прямиком из Удмуртии</title>
+    <title>{% block title %}ERR-MECH{% endblock %}</title>
     <meta name="description"
-          content="Кастомные мезанические клавиатуры по выгодной цене прямиком из Удмуртской Республики. Каждая клавиатура собрана исключительно в ручную, а коплектующие проходят проверку и внимательный осмотр. Каждая наша продукция внимательно тестируется перед тем как отправиться покупателю. ERR-MECH - это забота о пользователях.">
+          content="">
     <meta name="keywords"
           content="клавиатура, ижевск, механика, механическая клавиатура, err mech, err-mech, err.mech, error, err, mech, error mech, mechanical, keyboards, geteron">
-    <link rel="stylesheet" href="/fonts/Gilroy/stylesheet.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    {% block styles %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'fonts/Gilroy/stylesheet.css' %}">
+    <link rel="shortcut icon" href="{% static 'favicon.png' %}" type="image/x-icon">
 </head>
 <body>
 <div class="page-wrapper">
@@ -28,25 +31,18 @@
                     <span aria-hidden class="cybr-btn__glitch">err.mech</span>
                     <!-- <span aria-hidden class="cybr-btn__tag">R25</span> -->
                 </a>
-                <nav class="nav">
-                    <a href="#" class="nav__link">Клавиатуры</a>
-                    <a href="#" class="nav__link">Переключатели</a>
-                    <a href="#" class="nav__link">Кейкапы</a>
-                    <a href="#" class="nav__link">Аксессуары</a>
-                    <a href="#" class="nav__link">Новости</a>
-                    <a href="/categories.html" class="nav__link">Категории</a>
-                </nav>
+                {% include 'inc/_nav.html' %}
                 <div class="header__buttons">
                     <a href="#" class="search-btn">
-                        <img src="/image/SVG/search.svg" alt="" class="search-btn__image">
+                        <img src="{% static 'image/SVG/search.svg' %}" alt="" class="search-btn__image">
                         <p>Поиск</p>
                     </a>
                     <a href="#" class="profile-btn">
-                        <img src="/image/SVG/profile.svg" alt="" class="profile-btn__image">
+                        <img src="{% static 'image/SVG/profile.svg' %}" alt="" class="profile-btn__image">
                         <p>Профиль</p>
                     </a>
                     <a href="#" class="cart-btn">
-                        <img src="/image/SVG/cart.svg" alt="" class="cart-btn__image">
+                        <img src="{% static 'image/SVG/cart.svg' %}" alt="" class="cart-btn__image">
                         <p>Корзина</p>
                     </a>
                 </div>
@@ -63,17 +59,21 @@
             </nav>
             <div class="menu-search">
                 <button class="menu-search__btn">
-                    <img src="/image/SVG/search.svg" alt="">
+                    <img src="{% static 'image/SVG/search.svg' %}" alt="">
                 </button>
                 <input type="text" placeholder="Что нужно найти?" required name="search" class="menu-search__input">
             </div>
             <a href="#" class="menu-profile">
-                <img src="/image/SVG/profile.svg" alt="" class="menu-profile__image">
+                <img src="{% static 'image/SVG/profile.svg' %}" alt="" class="menu-profile__image">
                 <p>Профиль</p>
             </a>
         </div>
     </header>
-    <main class="main"></main>
+    <main class="main">
+        {% block content %}
+            Пустая страница
+        {% endblock %}
+    </main>
     <footer class="footer">
         <div class="container">
             <div class="footer__links">
@@ -82,14 +82,7 @@
                     <span aria-hidden class="cybr-btn__glitch">err.mech</span>
                     <!-- <span aria-hidden class="cybr-btn__tag">R25</span> -->
                 </a>
-                <nav class="nav">
-                    <a href="#" class="nav__link">Клавиатуры</a>
-                    <a href="#" class="nav__link">Переключатели</a>
-                    <a href="#" class="nav__link">Кейкапы</a>
-                    <a href="#" class="nav__link">Аксессуары</a>
-                    <a href="#" class="nav__link">Новости</a>
-                    <a href="/categories.html" class="nav__link">Категории</a>
-                </nav>
+                {% include 'inc/_nav.html' %}
             </div>
             <div class="footer__flex">
                 <div class="footer__box">
@@ -121,11 +114,11 @@
                         </div>
                         <div class="social">
                             <a href="https://vk.com/errmech" target="_blank" class="social__link">
-                                <img src="/image/SVG/vk.svg" alt="" class="social__image">
+                                <img src="{% static 'image/SVG/vk.svg' %}" alt="" class="social__image">
                                 <p>ВКонтакте</p>
                             </a>
                             <a href="" class="social__link">
-                                <img src="/image/SVG/instagram.svg" alt="" class="social__image">
+                                <img src="{% static 'image/SVG/instagram.svg' %}" alt="" class="social__image">
                                 <p>Инстаграм</p>
                             </a>
                         </div>
@@ -140,9 +133,12 @@
         </div>
     </footer>
 </div>
-    <script src="/libs/jquery-3.6.0.min.js"></script>
-    <script src="/libs/slick.min.js"></script>
-    <script src="/js/gradient.js"></script>
-    <script src="/js/main.js"></script>
+<script src="{% static '/libs/jquery-3.6.0.min.js' %}"></script>
+<script src="{% static '/libs/slick.min.js' %}"></script>
+<script src="{% static '/js/gradient.js' %}"></script>
+<script src="{% static '/js/main.js' %}"></script>
+{% block scripts %}
+
+{% endblock %}
 </body>
 </html>
