@@ -1,64 +1,56 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Кастомные клавиатуры по выгодной цене прямиком из Удмуртии</title>
-  <meta name="description" content="Кастомные мезанические клавиатуры по выгодной цене прямиком из Удмуртской Республики. Каждая клавиатура собрана исключительно в ручную, а коплектующие проходят проверку и внимательный осмотр. Каждая наша продукция внимательно тестируется перед тем как отправиться покупателю. ERR-MECH - это забота о пользователях.">
-  <meta name="keywords" content="клавиатура, ижевск, механика, механическая клавиатура, err mech, err-mech, err.mech, error, err, mech, error mech, mechanical, keyboards, geteron">
-  <link rel="stylesheet" href="/fonts/Gilroy/stylesheet.css">
-  <!-- <link rel="stylesheet" href="/css/style.css"> -->
-  <link rel="stylesheet" href="/css/signin.css">
-  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-</head>
-<body>
-  <div class="page-wrapper">
-    <main class="main">
-      <section class="signin login__styles">
+{% extends 'base.html' %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/signin.css' %}">
+{% endblock %}
+{% block footer %}{% endblock %}
+{% block header %}{% endblock %}
+{% block content %}
+    <section class="signin login__styles">
         <div class="container">
-          <div class="signin__box login__box">
-            <div class="image">
+            <div class="signin__box login__box">
+                <div class="image">
 
+                </div>
+                <form class="form" method="post">
+                    {% csrf_token %}
+                    <div class="form-wrapper">
+                        <p class="login__title">
+                            Регистрация
+                        </p>
+                        <p class="login__subtitle">
+                            Уже есть аккаунт? <a href="{% url 'login' %}" class="link">Войти</a>
+                        </p>
+                        <div class="input-wrapper">
+                            {{ form.username }}
+                        </div>
+                        <div class="input-wrapper">
+                            {{ form.email }}
+                        </div>
+                        <div class="input-wrapper">
+                            {{ form.password1 }}
+                        </div>
+                        <div class="input-wrapper">
+                            {{ form.password2 }}
+                        </div>
+                        <div class="login-checkbox">
+                            <div class="checkbox"></div>
+                            <p class="checkbox__label">Я принимаю условия <a href="#" class="link">пользовательского
+                                соглашения</a></p>
+                        </div>
+                        <ul class="login-alert">
+                            {% if messages %}
+                                {% for message in messages %}
+                                    {% if message.tags == 'error' %}
+                                            <li>{{ message }}</li>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <button type="submit" class="login__btn btn">Зарегистрироваться</button>
+                </form>
             </div>
-            <div class="form">
-              <div class="form-wrapper">
-                <p class="login__title">
-                  Регистрация
-                </p>
-                <p class="login__subtitle">
-                  Уже есть аккаунт? <a href="/login.html" class="link">Войти</a>
-                </p>
-                <div class="input-wrapper">
-                  <input type="text" class="input login__input access" placeholder="Логин">
-                </div>
-                <div class="input-wrapper">
-                  <input type="email" class="input login__input" placeholder="E-Mail" required>
-                </div>
-                <div class="input-wrapper">
-                  <input type="password" class="input login__input" placeholder="Пароль" required>
-                </div>
-                <div class="input-wrapper">
-                  <input type="password" class="input login__input" placeholder="Поддтверждение пароля" required>
-                </div>
-                <div class="login-checkbox">
-                  <div class="checkbox"></div>
-                  <p class="checkbox__label">Я принимаю условия <a href="#" class="link">пользовательского соглашения</a></p>
-                </div>
-                <ul class="login-alert">
-                  <li>Имя пользователя уже занято</li>
-                </ul>
-              </div>
-              <button type="submit" class="login__btn btn">Зарегистрироваться</button>
-            </div>
-          </div>
         </div>
-      </section>
-    </main>
-  </div>
-  <script src="/libs/jquery-3.6.0.min.js"></script>
-  <script src="/libs/slick.min.js"></script>
-  <script src="/js/gradient.js"></script>
-  <script src="/js/main.js"></script>
-</body>
-</html>
+    </section>
+{% endblock %}

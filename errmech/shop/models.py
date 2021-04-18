@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Company(models.Model):
@@ -67,8 +68,8 @@ class Item(models.Model):
         template = '{0.company_fk} {0.name}'
         return template.format(self)
 
-    # def get_absolute_url(self):
-    #     return reverse('view_item', kwargs={"item_slug": self.slug})
+    def get_absolute_url(self):
+        return reverse('ViewItem', kwargs={"item_slug": self.slug})
 
     class Meta:
         verbose_name = 'Товар'
@@ -81,7 +82,8 @@ class ItemWithPhoto(models.Model):
     photo = models.ImageField(upload_to='photos/%Y/%m/%d/', verbose_name='Фотография')
 
     def __str__(self):
-        return self.title
+        template = '{0.item_fk} {0.photo}'
+        return template.format(self)
 
     # def get_absolute_url(self):
     #     return reverse('category', kwargs={"category_slug": self.slug})

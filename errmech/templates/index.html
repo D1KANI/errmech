@@ -32,9 +32,9 @@
                     <div class="product-small">
                         <div class="product-small__image-wrapper">
                             <img src="{{ item.main_photo.url }}" alt="" class="product-small__image">
-                            <a href="{% url 'view_item' %}" class="product-small__link">Подробнее</a>
+                            <a href="{% url 'item' item.slug %}" class="product-small__link">Подробнее</a>
                         </div>
-                        <a href="{% url 'view_item' %}" class="product-small__name">
+                        <a href="{% url 'item' item.slug %}" class="product-small__name">
                             <span class="company">{{ item.company_fk }}</span>
                             <span class="name">{{ item.name }}</span>
                         </a>
