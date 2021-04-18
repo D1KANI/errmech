@@ -92,6 +92,7 @@ h3 {
   position: relative;
   padding-bottom: 3px;
   padding-top: 3px;
+
   &:before {
     content: "";
     display: block;
@@ -103,6 +104,7 @@ h3 {
     left: 0;
     transition: width 175ms ease-out;
   }
+
   &:hover {
     &::before {
       width: 100%;
@@ -121,6 +123,7 @@ h3 {
   font-size: 16px;
   line-height: 19px;
   transition: border-color 175ms ease-out;
+
   &:focus {
     border-color: $green;
   }
@@ -143,6 +146,7 @@ h3 {
   position: relative;
   overflow: hidden;
   user-select: none;
+
   &:before {
     content: "";
     display: block;
@@ -155,6 +159,7 @@ h3 {
     transform: translateY(-50%) rotate(45deg);
     transition: left 0ms steps(0, emd);
   }
+
   &:hover {
     &:before {
       left: 140%;
@@ -197,6 +202,7 @@ h3 {
     background-color: $swBrown;
     border-color: $swBrown;
   }
+
   &.active {
     background-color: $swBrown;
     border-color: $swBrown;
@@ -208,6 +214,7 @@ h3 {
     background-color: $swBlue;
     border-color: $swBlue;
   }
+
   &.active {
     background-color: $swBlue;
     border-color: $swBlue;
@@ -219,6 +226,7 @@ h3 {
     background-color: $swRed;
     border-color: $swRed;
   }
+
   &.active {
     background-color: $swRed;
     border-color: $swRed;
@@ -230,6 +238,7 @@ h3 {
     background-color: $swSilentRed;
     border-color: $swSilentRed;
   }
+
   &.active {
     background-color: $swSilentRed;
     border-color: $swSilentRed;
@@ -241,6 +250,7 @@ h3 {
     background-color: $swBlack;
     border-color: $swBlack;
   }
+
   &.active {
     background-color: $swBlack;
     border-color: $swBlack;
@@ -252,6 +262,7 @@ h3 {
     background-color: $swClear;
     border-color: $swClear;
   }
+
   &.active {
     background-color: $swClear;
     border-color: $swClear;
@@ -263,6 +274,7 @@ h3 {
     background-color: $swSpeedSilver;
     border-color: $swSpeedSilver;
   }
+
   &.active {
     background-color: $swSpeedSilver;
     border-color: $swSpeedSilver;

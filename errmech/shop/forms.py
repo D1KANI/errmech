@@ -7,11 +7,14 @@ import re
 
 
 class UserRegisterForm(UserCreationForm):
-    username = forms.CharField(label='',
-                               widget=forms.TextInput(attrs={'class': 'input login__input', 'autocomplete': 'off'}))
-    password1 = forms.CharField(label='', widget=forms.PasswordInput(attrs={'class': 'input login__input'}))
-    password2 = forms.CharField(label='', widget=forms.PasswordInput(attrs={'class': 'input login__input'}))
-    email = forms.EmailField(label='', widget=forms.EmailInput(attrs={'class': 'input login__input'}))
+    username = forms.CharField(label='', widget=forms.TextInput(
+        attrs={'class': 'input login__input', 'autocomplete': 'off', 'placeholder': 'Логин'}))
+    password1 = forms.CharField(label='', widget=forms.PasswordInput(
+        attrs={'class': 'input login__input', 'placeholder': 'Пароль'}))
+    password2 = forms.CharField(label='', widget=forms.PasswordInput(
+        attrs={'class': 'input login__input', 'placeholder': 'Подтвержение пароля'}))
+    email = forms.EmailField(label='',
+                             widget=forms.EmailInput(attrs={'class': 'input login__input', 'placeholder': 'E-Mail'}))
 
     class Meta:
         model = User
@@ -19,6 +22,7 @@ class UserRegisterForm(UserCreationForm):
 
 
 class UserLoginForm(AuthenticationForm):
-    username = forms.CharField(label='',
-                               widget=forms.TextInput(attrs={'class': 'input login__input', 'autocomplete': 'none'}))
-    password = forms.CharField(label='', widget=forms.PasswordInput(attrs={'class': 'input login__input'}))
+    username = forms.CharField(label='', widget=forms.TextInput(
+        attrs={'class': 'input login__input', 'autocomplete': 'none', 'placeholder': 'Логин'}))
+    password = forms.CharField(label='', widget=forms.PasswordInput(
+        attrs={'class': 'input login__input', 'placeholder': 'Пароль'}))
