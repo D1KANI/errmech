@@ -1,0 +1,26 @@
+.result {
+  padding: 70px 0;
+  &__title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+  }
+  &__flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+  &__btn {
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .result {
+    &__title {
+      font-size: 32px;
+    }
+  }
+}
