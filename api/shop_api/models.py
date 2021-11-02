@@ -10,6 +10,9 @@ class Product(models.Model):
     basic_price = models.DecimalField(max_digits=7, decimal_places=2, verbose_name='Основная цена', default=1)
     slug = models.SlugField(unique=True, verbose_name='Ссылка', max_length=64)
 
+    def __str__(self):
+        return f'{self.category.title} : {self.company.title} - {self.title}'
+
 
 class Company(models.Model):
     title = models.CharField(max_length=64, unique=True, verbose_name='Название')
@@ -34,7 +37,7 @@ class Photos(models.Model):
     image = models.ImageField(upload_to='products/%Y/%m/%d/')
 
     def __str__(self):
-        return self.image
+        return f'{self.product.title} : {self.image.url}'
 
     class Meta:
         ordering = ['product']
