@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-yoqfy3klv1m3&so2dd55u6&ke!%6_$kcxx^3f2ybfggvy31x5u'
+SECRET_KEY = 'django-insecure-ok^zcbu*2_lk4qd652!g%2jjou8ca-e37#j+dzounxwszi)mgj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,13 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'shop_api.apps.ShopApiConfig',
+
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
     'djoser',
 
-
+    'shop.apps.ShopConfig',
 ]
 
 CORS_ALLOWED_ORIGINS = [
@@ -131,6 +131,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
