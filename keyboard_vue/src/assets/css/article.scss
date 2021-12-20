@@ -1,0 +1,19 @@
+.article {
+  padding: 50px 0;
+  &__desc {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 20px 0;
+    font-style: italic;
+  }
+  &__content {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  &__date {
+    color: #aaa;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 15px;
+  }
+}

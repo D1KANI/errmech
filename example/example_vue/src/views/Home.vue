@@ -3,10 +3,10 @@
     <section class="hero is-medium is-dark mb-6">
         <div class="hero-body has-text-centered">
             <p class="title mb-6">
-                Welcome to Djacket
+                Welcome to EXAMPLE
             </p>
             <p class="subtitle">
-                The best jacket store online
+                The best EXAMPLE store online
             </p>
         </div>
     </section>
@@ -18,42 +18,38 @@
         </h2>
       </div>
 
-      <div 
-        class="column is-3" 
+      <product-box
         v-for="product in latestProducts"
         :key="product.id"
+        :product="product"
       >
-        <div class="box">
-          <figure class="image mb-4">
-            <img :src="product.get_thumbnail" alt="Image Not Found">
-          </figure>
-          <h3 class="is-size-4">{{ product.name }}</h3>
-          <p class="is-size-6 has-gray-text">${{ product.price }}</p>
-          View Details
-        </div>
-      </div>
+      </product-box>
     </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import ProductBox from '@/components/ProductBox'
 
 export default {
   name: 'Home',
+  components: {
+    ProductBox
+  },
   data() {
     return {
       latestProducts: []
     }
   },
-  components: {
-  },
   mounted() {
     this.getLatestProducts();
+    document.title = 'Home | EXAMPLE'
   },
   methods: {
-    getLatestProducts() {
-      axios
+    async getLatestProducts() {
+      this.$store.commit('setIsLoading', true)
+      await axios
         .get('/api/v1/latest-products/')
         .then(response => {
           this.latestProducts = response.data
@@ -61,15 +57,8 @@ export default {
         .catch(error => {
           console.log(error);
         })
+      this.$store.commit('setIsLoading', false)
     }
   }
 }
 </script>
-
-<style scoped lang="scss">
-  .image {
-    // margin: -1.25rem -1.25rem 0 -1.25rem;
-    user-select: none;
-    pointer-events: none;
-  }
-</style>

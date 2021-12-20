@@ -2,12 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbfc297d-e2fe-4441-b355-abdf4fafc723" name="Changes" comment="example django new create">
-      <change afterPath="$PROJECT_DIR$/shop/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../keyboard_api/.idea/keyboard_api.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example_django/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/example_django/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example_django/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/example_django/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example_vue/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../example_vue/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example_vue/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../example_vue/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example_vue/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../example_vue/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../example_vue/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../example_vue/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example_vue/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../example_vue/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example_vue/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../example_vue/src/store/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../example_vue/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../example_vue/src/views/Home.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,8 +54,9 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../keyboard_api" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager">
@@ -86,6 +94,12 @@
       <updated>1637225722367</updated>
       <workItem from="1637225737776" duration="87000" />
       <workItem from="1637225829826" duration="8001000" />
+      <workItem from="1637491289484" duration="856000" />
+      <workItem from="1637562668281" duration="7325000" />
+      <workItem from="1637654065483" duration="4999000" />
+      <workItem from="1637821467421" duration="1207000" />
+      <workItem from="1638186766051" duration="115000" />
+      <workItem from="1638524326412" duration="823000" />
     </task>
     <task id="LOCAL-00001" summary="example django new create">
       <created>1637228371884</created>
@@ -122,6 +136,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

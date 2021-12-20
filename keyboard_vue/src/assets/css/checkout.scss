@@ -1,0 +1,228 @@
+@import "constants";
+@import "base";
+@import "logo";
+@import "layout";
+
+
+.checkout {
+  padding: 50px 0 70px;
+  h1 {
+    text-align: left;
+  }
+  &-box {
+    width: 1170px;
+    max-width: 100%;
+    padding: 50px;
+    border: 1px solid $border;
+    border-radius: 5px;
+    margin-top: 50px;
+  }
+  &-cart {
+    padding-bottom: 30px;
+    border-bottom: 1px solid $border;
+    &-table {
+      width: 820px;
+      max-width: 100%;
+      margin: 30px 0 10px;
+      .row {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        &._head {
+          .col {
+            color: $lightGrey;
+            text-transform: uppercase;
+          }
+        }
+        .col {
+          margin: 0 20px;
+          margin-bottom: 20px;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 19px;
+          &:first-child {
+            width: 20px;
+          }
+          &:nth-child(2) {
+            width: 150px;
+          }
+          &:nth-child(3) {
+            width: 250px;
+          }
+          &:nth-child(4) {
+            width: 100px;
+          }
+          &:last-child {
+            width: 100px;
+          }
+        }
+      }
+    }
+    &-result {
+      display: flex;
+      align-items: center;
+      background-color: #F8F8F8;
+      border-radius: 5px;
+      padding: 15px 20px;
+      width: max-content;
+      &__head {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        color: #585F65;
+        margin-right: 10px;
+      }
+      &__body {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 21px;
+      }
+    }
+  }
+  &-person {
+    padding: 30px 0;
+    border-bottom: 1px solid $border;
+    &__flex {
+      width: 960px;
+      max-width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 20px;
+      .input-wrapper {
+        width: calc((100% - 60px) / 3);
+        margin-bottom: 20px;
+        &._textarea {
+          width: calc((100% - 60px) / 3 * 2 + 30px);
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  &-payment {
+    padding: 30px 0 0;
+    &-buttons {
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+    &-btn {
+      padding: 15px 20px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      border-radius: 5px;
+      border: 1px solid #E7E7E7;
+      margin-right: 20px;
+      cursor: pointer;
+      &._active {
+        color: $green;
+        border-color: $green;
+      }
+      &._disabled {
+        cursor: not-allowed;
+        color: $grey;
+      }
+    }
+  }
+  &__textarea {
+    resize: none;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .checkout {
+    &-cart {
+      &-table {
+        .row {
+          flex-direction: column;
+          margin-bottom: 40px;
+          &._head {
+            display: none;
+          }
+          .col {
+            &::before {
+              content: "";
+              display: block;
+              font-weight: 500;
+              font-size: 14px;
+              line-height: 17px;
+              color: $grey;
+              letter-spacing: 0.05em;
+              text-transform: uppercase;
+              margin-bottom: 5px;
+            }
+            &:first-child {
+              &::before {
+                content: "№";
+              }
+            }
+            &:nth-child(2) {
+              &::before {
+                content: "Производитель";
+              }
+            }
+            &:nth-child(3) {
+              &::before {
+                content: "Название";
+              }
+            }
+            &:nth-child(4) {
+              &::before {
+                content: "Количество";
+              }
+            }
+            &:last-child {
+              &::before {
+                content: "Цена";
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .checkout {
+    &-person {
+      &__flex {
+        display: block;
+        .input-wrapper {
+          width: 100%;
+          &._textarea {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .checkout {
+    &-box {
+      padding: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .checkout {
+    &-payment {
+      &-buttons {
+        justify-content: space-between;
+      }
+      &-btn {
+        margin-right: 0;
+      }
+    }
+    &__btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
